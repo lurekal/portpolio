@@ -10,13 +10,13 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles, useTheme, ThemeProvider } from '@material-ui/core/styles';
+
 import { Route } from 'react-router-dom';
 import Menu from './Menu'
 import About from "./main/about";
 import Notice from "./main/notice";
 import Home from "./main/home";
-
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -67,7 +67,9 @@ function Main(props) {
 
     const drawer = (
         <div>
-            <Menu/>
+            <ThemeProvider theme={theme}>
+            <Menu />
+            </ThemeProvider>
         </div>
     );
 

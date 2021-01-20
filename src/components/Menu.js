@@ -20,13 +20,12 @@ const style=(theme)=>({
     root: {
         width: '100%',
         maxWidth: 360,
-        // backgroundColor: theme.palette.background.paper,
+        backgroundColor: theme.palette.background.paper,
     },
     nested: {
-        // paddingLeft: theme.spacing(4),
+        paddingLeft: theme.spacing(5),
     },
 });
-
 
 
 
@@ -74,9 +73,9 @@ class Menu extends Component{
         >
 
             <ListItem button>
-                <ListItemIcon>
-                    <SendIcon />
-                </ListItemIcon>
+                {/*<ListItemIcon>*/}
+                {/*    <SendIcon />*/}
+                {/*</ListItemIcon>*/}
                 {/*<Link to={'/about'} >      </Link>*/}
                 <ListItemText primary="about" />
 
