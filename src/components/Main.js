@@ -14,9 +14,9 @@ import { makeStyles, useTheme, ThemeProvider } from '@material-ui/core/styles';
 
 import { Route } from 'react-router-dom';
 import Menu from './Menu'
-import About from "./main/about";
-import Notice from "./main/notice";
-import Home from "./main/home";
+import About from "./main/About";
+import Home from "./main/Home";
+import DashBoard from "./main/DashBoard"
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             width: `calc(100% - ${drawerWidth}px)`,
             marginLeft: drawerWidth,
+            // background:'black'
         },
     },
     menuButton: {
@@ -134,9 +135,11 @@ function Main(props) {
                 <div className={classes.toolbar} />
 
                 <div>
-                    <Route exact path="/" component={Home}/>
-                    <Route exact path="/notice" component={Notice}/>
-                    <Route path="/about" component={About}/>
+                    <ThemeProvider theme={theme}>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/dashboard" component={DashBoard}/>
+                    <Route path="/about" component={About} />
+                    </ThemeProvider>
                 </div>
                 {/*<Typography paragraph>*/}
                 {/*    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt*/}

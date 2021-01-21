@@ -5,7 +5,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Collapse from '@material-ui/core/Collapse';
+import {Collapse,Typography} from '@material-ui/core';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import SendIcon from '@material-ui/icons/Send';
@@ -72,22 +72,27 @@ class Menu extends Component{
             className={classes.root}
         >
 
-            <ListItem button>
+            <ListItem button component={Link} to={'/about'}>
                 {/*<ListItemIcon>*/}
                 {/*    <SendIcon />*/}
                 {/*</ListItemIcon>*/}
-                {/*<Link to={'/about'} >      </Link>*/}
-                <ListItemText primary="about" />
+
+                <Typography variant="button" display="block" >
+                    about
+                </Typography>
+                {/*<ListItemText primary="about" />*/}
 
             </ListItem>
 
-            <ListItem button>
+            <ListItem button  button component={Link} to={'/dashboard'}>
                 {/*<ListItemIcon>*/}
                 {/*    <DraftsIcon />*/}
                 {/*</ListItemIcon>*/}
-                <Link to={'/notice'}>
-                    <ListItemText primary="notice" />
-                </Link>
+
+                <Typography variant="button" display="block" >
+                    dashboard
+                </Typography>
+
                 {/*{open ? <ExpandLess /> : <ExpandMore />}*/}
             </ListItem>
 
@@ -95,8 +100,11 @@ class Menu extends Component{
                 {/*<ListItemIcon>*/}
                 {/*    <InboxIcon />*/}
                 {/*</ListItemIcon>*/}
-                <ListItemText primary="Inbox" />
-                {this.state.open ? <ExpandLess /> : <ExpandMore />}
+                <Typography variant="button" display="block" >
+                    Inbox
+                </Typography>
+                {/*<ListItemText primary="Inbox" />*/}
+                {/*{this.state.open ? <ExpandLess /> : <ExpandMore />}*/}
             </ListItem>
 
             <Collapse in={this.state.open} timeout="auto" unmountOnExit>
@@ -106,7 +114,9 @@ class Menu extends Component{
                         {/*    <StarBorder />*/}
                         {/*</ListItemIcon>*/}
                         <ListItemText primary="Starred" />
+
                     </ListItem>
+
                 </List>
             </Collapse>
         </List>
